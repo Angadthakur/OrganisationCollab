@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">OrganisationCollaborations</string>
+    <string name="new_post_heading">Collaborations\n</string>
+    <string name="top_greeting">Good eveing,John</string>
+    <string name="greeting">Collaborations</string>
+</resources>
