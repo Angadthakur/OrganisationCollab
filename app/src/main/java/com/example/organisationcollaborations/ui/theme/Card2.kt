@@ -6,7 +6,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -15,8 +14,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -46,17 +47,20 @@ fun Orgcard2(
                 )
     ) {
         Image(
-            painter = painterResource(id = R.drawable.card_image),
+            painter = painterResource(R.drawable.card_image),
             contentDescription = "",
+            contentScale = ContentScale.FillBounds,
             modifier = Modifier
-                .fillMaxSize()
-                .padding(bottom = 100.dp)
-                .align(Alignment.Center)
-                .background(
-                    brush = brush,
-                    shape = RoundedCornerShape(20.dp)
-                )
-                ,
+                .fillMaxWidth()
+                .height(190.dp)
+                .clip(RoundedCornerShape(20.dp))
+                //.padding(bottom = 0.dp)
+                .align(Alignment.TopCenter),
+            /*.background(
+                brush = brush,
+                shape = RoundedCornerShape(20.dp)
+            )*/
+            //.width(600.dp),
 
 
             alignment = Alignment.Center,
@@ -122,11 +126,6 @@ fun Orgcard2(
 
         )
         Spacer(modifier = Modifier.height(14.dp))
-
-
-
-        //val brush = Brush.verticalGradient(listOf(C1,C2,C3, C4))
-
     }
 }
 

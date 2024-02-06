@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.organisationcollaborations.ui.theme.Orgcard1
+import com.example.organisationcollaborations.ui.theme.Orgcard
 import com.example.organisationcollaborations.ui.theme.Orgcard2
 import com.example.organisationcollaborations.ui.theme.TopTextRow
 
@@ -30,7 +30,7 @@ fun Collaborations() {
         ) {
 
             TopTextRow(heading = R.string.new_post_heading)
-            Orgcard1()
+            Orgcard(picture = R.drawable.card_image)
             Spacer(modifier = Modifier.height(19.dp))
             Orgcard2()
         }}}
