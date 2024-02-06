@@ -1,4 +1,4 @@
-package com.example.organisationcollaborations.ui.theme
+package ui.elements
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image

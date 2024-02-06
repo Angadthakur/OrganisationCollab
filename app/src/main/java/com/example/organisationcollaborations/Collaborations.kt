@@ -12,9 +12,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.organisationcollaborations.ui.theme.Orgcard
-import com.example.organisationcollaborations.ui.theme.Orgcard2
-import com.example.organisationcollaborations.ui.theme.TopTextRow
+import ui.elements.BottomNavBar
+import ui.elements.Orgcard
+import ui.elements.Orgcard2
+import ui.elements.TopTextRow
 
 
 @Composable

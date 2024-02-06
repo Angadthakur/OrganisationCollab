@@ -1,4 +1,4 @@
-package com.example.organisationcollaborations.ui.theme
+package ui.elements
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
@@ -25,6 +25,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.organisationcollaborations.R
+import com.example.organisationcollaborations.ui.theme.C1
+import com.example.organisationcollaborations.ui.theme.C2
 
 @Composable
 fun Orgcard(
@@ -33,7 +35,7 @@ fun Orgcard(
 
 ) {
 
-    val brush = Brush.verticalGradient(listOf(C1,C2, Color.White))
+    val brush = Brush.verticalGradient(listOf(C1, C2, Color.White))
 
     Box (
         modifier = modifier
