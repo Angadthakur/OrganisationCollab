@@ -3,18 +3,21 @@ package ui.elements
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -27,25 +30,32 @@ import androidx.compose.ui.unit.sp
 import com.example.organisationcollaborations.R
 import com.example.organisationcollaborations.ui.theme.C1
 import com.example.organisationcollaborations.ui.theme.C2
+import com.example.organisationcollaborations.ui.theme.C4
+
 
 @Composable
 fun Orgcard(
     modifier: Modifier = Modifier,
-    @DrawableRes picture: Int
+    @DrawableRes picture: Int,
+    gradient: Brush
 
 ) {
 
-    val brush = Brush.verticalGradient(listOf(C1, C2, Color.White))
+    //val brush = Brush.verticalGradient(listOf(C1, C2, Color.White))
 
     Box (
         modifier = modifier
             .height(290.dp)
             .padding(horizontal = 10.dp)
             .fillMaxWidth()
-            .background(
-                brush = brush,
-                shape = RoundedCornerShape(20.dp),
+            .shadow(
+                elevation = 70.dp,
+                ambientColor = Color.Gray,
 
+                )
+            .background(
+                brush = gradient,
+                shape = RoundedCornerShape(20.dp),
 
                 )
     ) {
@@ -57,7 +67,11 @@ fun Orgcard(
                 .fillMaxWidth()
                 .height(190.dp)
                 .clip(RoundedCornerShape(20.dp))
-                //.padding(bottom = 0.dp)
+                .shadow(
+                    elevation = 100.dp,
+                    ambientColor = Color.Gray
+                )
+
                 .align(Alignment.TopCenter),
                 /*.background(
                     brush = brush,
@@ -70,7 +84,15 @@ fun Orgcard(
 
 
         )
-        Row {
+        Row(
+
+            modifier = Modifier
+                //.height(50.dp)
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+
+
+        ) {
             Text(
                 text = "Organisation Name",
                 style = TextStyle(
@@ -87,20 +109,21 @@ fun Orgcard(
                 painter = painterResource(id = R.drawable.linkedin_logo),
                 contentDescription = "",
                 modifier = Modifier
-                    .height(20.dp)
-                    .clip(RoundedCornerShape(3.dp)),
-                    //.padding( start = 273.dp,),
-
-                alignment = Alignment.Center
+                    .padding(top = 195.dp, end = 12.dp, start = 175.dp)
+                    .size(20.dp)
+                    .clip(RoundedCornerShape(3.dp))
+                    .align(Alignment.CenterVertically)
 
             )
-
+            Image(
+                painter = painterResource(id = R.drawable.instagram_logo),
+                contentDescription = "",
+                modifier = Modifier
+                    .padding(top = 195.dp, end = 12.dp)
+                    .size(20.dp)
+                    .clip(RoundedCornerShape(3.dp))
+                    .align(Alignment.CenterVertically))
         }
-
-
-
-
-
 
 
         Text(
@@ -160,8 +183,12 @@ fun Orgcard(
 }
 
 
+
+
 @Preview
 @Composable
 fun DisplayCard() {
-    Orgcard(picture = R.drawable.card_image)
+    Orgcard(picture = R.drawable.card_image ,
+        gradient =Brush.verticalGradient(listOf(C1, C2, C4)) )
+
 }
