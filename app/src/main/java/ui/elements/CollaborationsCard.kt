@@ -28,9 +28,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.organisationcollaborations.R
-import com.example.organisationcollaborations.ui.theme.C1
-import com.example.organisationcollaborations.ui.theme.C2
-import com.example.organisationcollaborations.ui.theme.C4
 
 
 @Composable
@@ -189,6 +186,6 @@ fun Orgcard(
 @Composable
 fun DisplayCard() {
     Orgcard(picture = R.drawable.card_image ,
-        gradient =Brush.verticalGradient(listOf(C1, C2, C4)) )
+        gradient =Brush.verticalGradient(listOf()) )
 
 }
